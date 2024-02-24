@@ -26,6 +26,12 @@ export function App() {
     setTitle("")
   }
 
+  function handleRemoveOneTask(id: number) {
+    const newTasks = tasks.filter((task) => task.id !== id)
+
+    setTasks(newTasks)
+  }
+
   return (
     <>
       <header>
@@ -45,7 +51,10 @@ export function App() {
         <ul>
           {
             tasks.map(task => (
-              <li>{task.title}</li>
+              <li>
+                {task.title}
+                <button onClick={() => handleRemoveOneTask(task.id)}>Deletar</button>
+              </li>
             ))
           }
         </ul>
