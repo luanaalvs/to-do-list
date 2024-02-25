@@ -4,12 +4,17 @@ import styles from "./task.module.css";
 
 interface TaskProps {
   data: Tasks,
-  toggleStatus: ({ id, value }: { id: number, value: boolean }) => void
+  remove: (id: number) => void,
+  toggleStatus: ({ id, value }: { id: number, value: boolean }) => void,
 }
 
-export function Task({ data, toggleStatus }: TaskProps) {
+export function Task({ data, remove, toggleStatus }: TaskProps) {
   function handleTaskToggle() {
     toggleStatus({ id: data.id, value: !data.isDone })
+  }
+
+  function handleRemove() {
+    remove(data.id)
   }
 
   const checkboxClassName = data.isDone
@@ -35,7 +40,10 @@ export function Task({ data, toggleStatus }: TaskProps) {
           </span>
         </label>
       </div>
-      <button className={styles.btn}>
+      <button
+        className={styles.btn}
+        onClick={handleRemove}
+      >
         <Trash2
           size={14}
           color="#808080"

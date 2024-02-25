@@ -68,6 +68,7 @@ export function App() {
             tasks.map(task => (
               <Task
                 data={task}
+                remove={handleRemoveOneTask}
                 toggleStatus={toggleTaskStatus}
               />
             ))
