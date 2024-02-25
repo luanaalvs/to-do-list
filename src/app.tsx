@@ -1,4 +1,5 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, useState } from "react";
+import styles from "./app.module.css";
 
 interface Tasks {
   id: number
@@ -32,6 +33,21 @@ export function App() {
     setTasks(newTasks)
   }
 
+  function toggleTaskStatus(id: number) {
+    const newTask = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          isDone: !task.isDone
+        }
+      }
+      return task
+    })
+
+    setTasks(newTask)
+    console.log(newTask)
+  }
+
   return (
     <>
       <header>
@@ -52,7 +68,8 @@ export function App() {
           {
             tasks.map(task => (
               <li>
-                {task.title}
+                <input type="checkbox" onChange={() => toggleTaskStatus(task.id)} />
+                <span className={task.isDone ? styles.check : ""}>{task.title}</span>
                 <button onClick={() => handleRemoveOneTask(task.id)}>Deletar</button>
               </li>
             ))
