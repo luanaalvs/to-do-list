@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { Header } from "./components/header";
 import { Task } from "./components/task";
 
 export interface Tasks {
@@ -49,9 +50,7 @@ export function App() {
 
   return (
     <>
-      <header>
-        <h1>TODO</h1>
-      </header>
+      <Header />
 
       <form onSubmit={handleAddTask}>
         <input
@@ -67,6 +66,7 @@ export function App() {
           {
             tasks.map(task => (
               <Task
+                key={task.id}
                 data={task}
                 remove={handleRemoveOneTask}
                 toggleStatus={toggleTaskStatus}
