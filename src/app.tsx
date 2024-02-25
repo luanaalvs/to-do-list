@@ -1,10 +1,10 @@
 import { FormEvent, useState } from "react";
-import styles from "./app.module.css";
+import { Task } from "./components/task";
 
-interface Tasks {
-  id: number
+export interface Tasks {
+  id: number,
   title: string,
-  isDone: boolean
+  isDone: boolean,
 }
 
 export function App() {
@@ -33,19 +33,18 @@ export function App() {
     setTasks(newTasks)
   }
 
-  function toggleTaskStatus(id: number) {
+  function toggleTaskStatus({ id, value }: { id: number, value: boolean }) {
     const newTask = tasks.map((task) => {
       if (task.id === id) {
         return {
           ...task,
-          isDone: !task.isDone
+          isDone: value
         }
       }
-      return task
+      return { ...task }
     })
 
     setTasks(newTask)
-    console.log(newTask)
   }
 
   return (
@@ -67,11 +66,10 @@ export function App() {
         <ul>
           {
             tasks.map(task => (
-              <li>
-                <input type="checkbox" onChange={() => toggleTaskStatus(task.id)} />
-                <span className={task.isDone ? styles.check : ""}>{task.title}</span>
-                <button onClick={() => handleRemoveOneTask(task.id)}>Deletar</button>
-              </li>
+              <Task
+                data={task}
+                toggleStatus={toggleTaskStatus}
+              />
             ))
           }
         </ul>
