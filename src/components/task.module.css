@@ -28,6 +28,22 @@
   height: 1.125rem;
   border-radius: 50%;
   border: 2px solid #4EA8DE;
+  cursor: pointer;
+}
+
+.checkbox-unchecked:hover {
+  border: 2px solid #1E6F9F;
+  background-color: rgba(30, 111, 159, .2);
+}
+
+.checkbox-checked {
+  border: 2px solid #5E60CE;
+  background-color: #5E60CE;
+}
+
+.checkbox-checked:hover {
+  border: 2px solid #8284FA;
+  background-color: #8284FA;
 }
 
 .paragraph {
@@ -35,6 +51,11 @@
   line-height: 140%;
   user-select: none;
   color: #F2F2F2;
+}
+
+.paragraph-checked {
+  text-decoration: line-through;
+  color: #808080;
 }
 
 .btn {
