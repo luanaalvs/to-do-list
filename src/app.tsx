@@ -52,6 +52,10 @@ export function App() {
     setTasks(newTask)
   }
 
+  const doneTasks = tasks.reduce((total, task) => {
+    return total + (task.isDone ? 1 : 0)
+  }, 0)
+
   return (
     <>
       <Header />
@@ -70,6 +74,23 @@ export function App() {
       </form>
 
       <main className={styles.tasks}>
+        <section className={styles.info}>
+          <div>
+            <span>Tarefas criadas</span>
+            <span className={styles.counter}>{tasks.length}</span>
+          </div>
+          <div>
+            <span>Concluídas</span>
+            <span className={styles.counter}>
+              {
+                tasks.length === 0
+                  ? tasks.length
+                  : `${doneTasks} de ${tasks.length}`
+              }
+            </span>
+          </div>
+        </section>
+
         {
           tasks.length > 0 ? (
             <ul className={styles.list}>
