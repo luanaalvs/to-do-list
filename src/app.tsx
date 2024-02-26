@@ -1,4 +1,7 @@
 import { FormEvent, useState } from "react";
+import styles from "./app.module.css";
+import { Button } from "./components/form/button";
+import { Input } from "./components/form/input";
 import { Header } from "./components/header";
 import { Task } from "./components/task";
 
@@ -52,13 +55,16 @@ export function App() {
     <>
       <Header />
 
-      <form onSubmit={handleAddTask}>
-        <input
+      <form
+        className={styles.form}
+        onSubmit={handleAddTask}
+      >
+        <Input
           type="text"
           value={title}
           onChange={e => setTitle(e.target.value)}
         />
-        <button>Criar</button>
+        <Button>Criar</Button>
       </form>
 
       <main>
