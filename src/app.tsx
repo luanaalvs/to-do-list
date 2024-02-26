@@ -3,7 +3,8 @@ import styles from "./app.module.css";
 import { Button } from "./components/form/button";
 import { Input } from "./components/form/input";
 import { Header } from "./components/header";
-import { Task } from "./components/task";
+import { Empty } from "./components/list/empty";
+import { Task } from "./components/list/task";
 
 export interface Tasks {
   id: number,
@@ -61,25 +62,32 @@ export function App() {
       >
         <Input
           type="text"
+          placeholder="Adicione uma nova tarefa"
           value={title}
           onChange={e => setTitle(e.target.value)}
         />
         <Button>Criar</Button>
       </form>
 
-      <main>
-        <ul>
-          {
-            tasks.map(task => (
-              <Task
-                key={task.id}
-                data={task}
-                remove={handleRemoveOneTask}
-                toggleStatus={toggleTaskStatus}
-              />
-            ))
-          }
-        </ul>
+      <main className={styles.tasks}>
+        {
+          tasks.length > 0 ? (
+            <ul className={styles.list}>
+              {
+                tasks.map(task => (
+                  <Task
+                    key={task.id}
+                    data={task}
+                    remove={handleRemoveOneTask}
+                    toggleStatus={toggleTaskStatus}
+                  />
+                ))
+              }
+            </ul>
+          ) : (
+            <Empty />
+          )
+        }       
       </main>
     </>
   )
