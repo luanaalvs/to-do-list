@@ -5,3 +5,14 @@
   margin: 0 auto;
   transform: translateY(-50%);
 }
+
+.tasks {
+  width: 46rem;
+  margin: 3rem auto 5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
