@@ -1,5 +1,5 @@
 import { Check, Trash2 } from "lucide-react";
-import { Tasks } from "../app";
+import { Tasks } from "../../app";
 import styles from "./task.module.css";
 
 interface TaskProps {
