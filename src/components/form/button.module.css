@@ -21,3 +21,9 @@
   font-weight: 700;
   color: #F2F2F2;
 }
+
+@media screen and (max-width: 797px) {
+  .btn span {
+    display: none;
+  }
+}
