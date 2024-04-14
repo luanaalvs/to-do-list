@@ -1,4 +1,4 @@
-import logo from "../assets/rocket.svg";
+import logo from "@assets/rocket.svg";
 import styles from "./header.module.css";
 
 export function Header() {
@@ -14,5 +14,5 @@ export function Header() {
         </h1>
       </div>
     </header>
-  )
-} 
+  );
+}
