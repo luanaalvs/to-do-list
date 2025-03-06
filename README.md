@@ -37,7 +37,7 @@
 
 ## Como instalar
 
-> 1 - Faça um `git clone` do projeto utilizando o link: `https://github.com/luanasilva0/to-do-list.git` ou da maneira que preferir.
+> 1 - Faça um `git clone` do projeto utilizando o link: `https://github.com/luanaalvs/to-do-list.git` ou da maneira que preferir.
 
 > 2 - Entre na pasta do projeti e instale as dependências utilizando o comando `yarn` ou `npm install`.
 
