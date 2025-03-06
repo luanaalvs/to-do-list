@@ -33,12 +33,12 @@
 
 ## Autor
 
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/105563488?v=4" width=115><br><sub>Luana Alves da Silva</sub>](https://github.com/luanasilva0)
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/105563488?v=4" width=115><br><sub>Luana Alves da Silva</sub>](https://github.com/luanaalvs)
 
 ## Como instalar
 
-> 1 - Faça um `git clone` do projeto utilizando o link: `https://github.com/luanaalvs/to-do-list.git` ou da maneira que preferir.
+> 1 - Faça um `git clone` do projeto utilizando o link: `https://github.com/luanaalvs/to-do-list.git`.
 
-> 2 - Entre na pasta do projeti e instale as dependências utilizando o comando `yarn` ou `npm install`.
+> 2 - Entre na pasta do projeto e instale as dependências utilizando o comando `yarn` ou `npm install`.
 
 > 3 - Agora é só rodar o projeto utilizando o comando `yarn dev` ou `npm run dev`.
